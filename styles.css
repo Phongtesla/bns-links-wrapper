@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 50%, #f3e8ff 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 30px 20px;
+}
+
+/* Header */
+.header {
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 32px;
+    filter: grayscale(0.3) brightness(1.1);
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e293b;
+    letter-spacing: 1px;
+}
+
+/* Main Content - Illustration Area */
+.main-content {
+    margin: 30px 0;
+}
+
+.illustration-container {
+    background: linear-gradient(180deg, #bfdbfe 0%, #e0e7ff 100%);
+    border-radius: 15px;
+    padding: 40px 20px;
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.illustration {
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-silhouette {
+    width: 120px;
+    height: 200px;
+    background: linear-gradient(135deg, #c084fc 0%, #a78bfa 50%, #818cf8 100%);
+    border-radius: 60px 60px 20px 20px;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.character-female {
+    position: absolute;
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+.character-female .character-silhouette {
+    background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 50%, #ddd6fe 100%);
+    width: 140px;
+    height: 220px;
+}
+
+.character-male {
+    position: absolute;
+    right: 25%;
+    transform: translateX(50%);
+}
+
+.character-male .character-silhouette {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%);
+    width: 130px;
+    height: 210px;
+}
+
+.birds {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 24px;
+    opacity: 0.8;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    background: linear-gradient(135deg, #86efac 0%, #4ade80 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    font-size: 24px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.btn-ios .btn-icon {
+    background: #007AFF;
+    color: white;
+    font-size: 20px;
+}
+
+.btn-android .btn-icon {
+    background: linear-gradient(135deg, #4285F4 0%, #34A853 50%, #FBBC05 100%);
+    color: white;
+    font-size: 18px;
+}
+
+.btn-support .btn-icon {
+    background: #1877F2;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .illustration-container {
+        min-height: 300px;
+        padding: 30px 15px;
+    }
+    
+    .btn {
+        padding: 15px 18px;
+        font-size: 15px;
+    }
+}
+
