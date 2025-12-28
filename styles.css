@@ -143,9 +143,15 @@ body {
 
 /* Responsive */
 @media (max-width: 480px) {
+  body {
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
   .container {
     padding: 20px 15px;
     border-radius: 15px;
+    margin-top: 0;
   }
 
   .logo-text {
