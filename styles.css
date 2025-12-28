@@ -48,13 +48,12 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .logo-icon {
   height: 40px;
   width: auto;
-  object-fit: contain;
+  display: block;
 }
 
 .logo-text {
@@ -85,8 +84,15 @@ body {
 .action-buttons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   margin-top: 15px;
+}
+
+.action-buttons .btn {
+  margin-bottom: 10px;
+}
+
+.action-buttons .btn:last-child {
+  margin-bottom: 0;
 }
 
 .btn {
@@ -123,9 +129,6 @@ body {
 }
 
 .btn-icon {
-  font-size: 24px;
-  font-weight: bold;
-  min-width: 40px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -133,46 +136,27 @@ body {
   justify-content: center;
   border-radius: 50%;
   flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .btn-ios .btn-icon {
-  color: white;
-  font-size: 20px;
+  background: #007aff;
 }
 
 .btn-android .btn-icon {
-  color: white;
-  font-size: 18px;
+  background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc05 100%);
 }
 
 .btn-support .btn-icon {
   background: #1877f2;
-  color: white;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  font-size: 24px;
 }
 
-.btn-support .btn-icon img {
+.btn-icon img {
   width: 24px;
   height: 24px;
   display: block;
-  object-fit: contain;
-}
-
-.btn-ios .btn-icon img,
-.btn-android .btn-icon img {
-  width: 24px;
-  height: 24px;
-  display: block;
-  object-fit: contain;
-}
-
-.btn-website .btn-icon img {
-  width: 24px;
-  height: 24px;
-  display: block;
-  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* Responsive */
