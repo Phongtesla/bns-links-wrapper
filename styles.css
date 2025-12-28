@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
   background: linear-gradient(
     180deg,
@@ -35,10 +35,14 @@ body {
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  padding: 15px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+
+/* Header */
+.header {
+  margin-bottom: 15px;
 }
 
 .logo {
@@ -121,12 +125,14 @@ body {
 .btn-icon {
   font-size: 24px;
   font-weight: bold;
-  width: 20px;
-  height: 20px;
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .btn-ios .btn-icon {
@@ -151,19 +157,22 @@ body {
   width: 24px;
   height: 24px;
   display: block;
+  object-fit: contain;
 }
 
 .btn-ios .btn-icon img,
 .btn-android .btn-icon img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   display: block;
+  object-fit: contain;
 }
 
 .btn-website .btn-icon img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   display: block;
+  object-fit: contain;
 }
 
 /* Responsive */

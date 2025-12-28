@@ -1,0 +1,21 @@
+<VirtualHost *:80>
+    ServerName bnsvip.cloud
+    ServerAlias www.bnsvip.cloud
+    
+    # Đường dẫn đến thư mục chứa files
+    DocumentRoot /var/www/html/bns-links-wrapper
+    
+    <Directory /var/www/html/bns-links-wrapper>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+        
+        # Trỏ về index.html
+        DirectoryIndex index.html
+    </Directory>
+    
+    # Log files
+    ErrorLog ${APACHE_LOG_DIR}/bns-error.log
+    CustomLog ${APACHE_LOG_DIR}/bns-access.log combined
+</VirtualHost>
+
