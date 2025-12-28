@@ -1,35 +1,25 @@
 // Handle iOS app download
 function handleIOSClick(event) {
-    event.preventDefault();
-    // Replace with actual App Store URL
-    const appStoreUrl = 'https://apps.apple.com/app/your-app-id';
-    
-    // Try to open App Store, fallback to URL if not on iOS
-    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        window.location.href = appStoreUrl;
-    } else {
-        alert('Vui lòng truy cập từ thiết bị iOS để tải ứng dụng');
-        // window.open(appStoreUrl, '_blank');
-    }
+  event.preventDefault();
+  // Replace with actual App Store URL
+  const appStoreUrl =
+    'https://apps.apple.com/vn/app/b%E1%BA%A1ch-ng%E1%BB%8Dc-s%C3%A1ch/id1672932706';
+  window.location.href = appStoreUrl;
 }
 
 // Handle Android app download
 function handleAndroidClick(event) {
-    event.preventDefault();
-    // Replace with actual Play Store URL
-    const playStoreUrl = 'https://play.google.com/store/apps/details?id=your.app.id';
-    
-    // Try to open Play Store, fallback to URL if not on Android
-    if (/Android/.test(navigator.userAgent)) {
-        window.location.href = playStoreUrl;
-    } else {
-        window.open(playStoreUrl, '_blank');
-    }
+  event.preventDefault();
+  // Replace with actual Play Store URL
+  const playStoreUrl =
+    'https://play.google.com/store/apps/details?id=vip.bachngocsach.app';
+
+  // Try to open Play Store, fallback to URL if not on Android
+  window.location.href = playStoreUrl;
 }
 
 // Add smooth scroll behavior
-document.addEventListener('DOMContentLoaded', function() {
-    // Add any initialization code here if needed
-    console.log('Tiên Vực landing page loaded');
+document.addEventListener('DOMContentLoaded', function () {
+  // Add any initialization code here if needed
+  console.log('Tiên Vực landing page loaded');
 });
-
