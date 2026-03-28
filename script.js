@@ -12,7 +12,7 @@ function handleAndroidClick(event) {
   event.preventDefault();
   // Replace with actual Play Store URL
   const playStoreUrl =
-    'https://play.google.com/store/apps/details?id=vip.bachngocsach.app';
+    'https://play.google.com/store/apps/details?id=bachngocsach.truyenhay';
 
   // Try to open Play Store, fallback to URL if not on Android
   window.location.href = playStoreUrl;
