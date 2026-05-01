@@ -10,7 +10,7 @@ function handleIOSClick(event) {
 // Handle Android app download
 function handleAndroidClick(event) {
   event.preventDefault();
-  const apkUrl = '/file/bachngocsach-app.apk';
+  const apkUrl = '/files/bachngocsach-app.apk';
   window.location.href = apkUrl;
 }
 
