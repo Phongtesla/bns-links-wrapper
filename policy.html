@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bạch Ngọc Sách - Chính sách & Điều khoản</title>
+    <link rel="icon" type="image/png" href="/images/logo-bns.png" />
+    <link rel="stylesheet" href="/styles.css?v=a22ddf" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+        background: linear-gradient(
+          180deg,
+          #1e3a8a 0%,
+          #3b82f6 30%,
+          #60a5fa 60%,
+          #dbeafe 100%
+        );
+      }
+      .policy-wrapper {
+        width: 100%;
+        max-width: 840px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      .policy-container {
+        width: 100%;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin: 0;
+      }
+      .policy-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 15px;
+      }
+      .back-btn {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #1e3a8a;
+        font-weight: 600;
+        margin-right: 20px;
+      }
+      .back-btn:hover {
+        text-decoration: underline;
+      }
+      .policy-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #1e293b;
+        margin: 0;
+        flex-grow: 1;
+        text-align: center;
+      }
+      .policy-content {
+        line-height: 1.8;
+        color: #334155;
+      }
+      .policy-content h1, .policy-content h2, .policy-content h3 {
+        color: #1e293b;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      .policy-content p {
+        margin-bottom: 15px;
+      }
+      .loader {
+        text-align: center;
+        padding: 40px;
+        font-size: 18px;
+        color: #64748b;
+      }
+      .policy-footer {
+        margin-top: auto;
+        padding: 30px 0 10px;
+        text-align: center;
+        width: 100%;
+      }
+      .policy-footer .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        font-size: 15px;
+      }
+      .policy-footer .footer-links a {
+        color: #15a292;
+        text-decoration: none;
+        font-weight: 700;
+        transition: opacity 0.2s;
+      }
+      .policy-footer .footer-links a:hover {
+        opacity: 0.8;
+      }
+      .policy-footer .footer-links span {
+        color: #15a292;
+        font-weight: 700;
+      }
+      @media (max-width: 768px) {
+        .policy-title {
+          font-size: 20px;
+        }
+        .policy-container {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="policy-wrapper">
+      <div class="policy-container">
+        <div class="policy-header">
+          <a href="/" class="back-btn">&larr; Quay lại</a>
+          <h1 class="policy-title" id="policyTitle">Đang tải...</h1>
+          <div style="width: 70px;"></div> <!-- Spacer to center title -->
+        </div>
+        <div class="policy-content" id="policyContent">
+          <div class="loader">Đang tải nội dung...</div>
+        </div>
+      </div>
+
+      <footer class="policy-footer">
+        <div class="footer-links">
+          <a href="/policy.html?type=4">Điều khoản dịch vụ</a>
+          <span>-</span>
+          <a href="/policy.html?type=5">Bản quyền</a>
+          <span>-</span>
+          <a href="/policy.html?type=6">Chính sách bảo mật</a>
+          <span>-</span>
+          <a href="/policy.html?type=7">Liên hệ</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const titles = {
+        '4': 'Điều khoản dịch vụ',
+        '5': 'Bản quyền',
+        '6': 'Chính sách bảo mật',
+        '7': 'Liên hệ'
+      };
+
+      async function loadPolicy() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const type = urlParams.get('type') || '4';
+        
+        const titleEl = document.getElementById('policyTitle');
+        const contentEl = document.getElementById('policyContent');
+        
+        if (titles[type]) {
+          titleEl.textContent = titles[type];
+          document.title = 'Bạch Ngọc Sách - ' + titles[type];
+        }
+
+        try {
+          const response = await fetch(`https://ngocsach.com/api/post/${type}`);
+          const data = await response.json();
+          
+          if (data && data.data && data.data.length > 0) {
+            contentEl.innerHTML = data.data[0].content;
+          } else {
+            contentEl.innerHTML = '<p style="text-align: center;">Không tìm thấy nội dung.</p>';
+          }
+        } catch (error) {
+          console.error('Error fetching policy:', error);
+          contentEl.innerHTML = '<p style="text-align: center; color: red;">Đã xảy ra lỗi khi tải nội dung. Vui lòng thử lại sau.</p>';
+        }
+      }
+
+      loadPolicy();
+    </script>
+  </body>
+</html>

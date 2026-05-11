@@ -17,6 +17,7 @@ body {
   min-height: 100vh;
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -38,6 +39,8 @@ body {
   padding: 15px;
   display: flex;
   flex-direction: column;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .logo {
@@ -166,5 +169,52 @@ body {
   .btn {
     padding: 15px 18px;
     font-size: 15px;
+  }
+}
+/* Footer */
+.footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 30px 0 10px;
+  width: 100%;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.footer-links a {
+  color: #15a292;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+  opacity: 0.8;
+}
+
+.footer-links span {
+  color: #15a292;
+  font-weight: 700;
+}
+
+.mobile-break {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-break {
+    display: block;
+    width: 100%;
+    height: 0;
   }
 }
